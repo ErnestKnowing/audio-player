@@ -1,6 +1,6 @@
-const audio = document.querySelector("#play-audio");
+const audio = document.querySelector("audio");
 function playAudio() {
-  audio.src = 
+  audio.src = 'music/bird.mp3';
   audio.currentTime = 0;
   audio.play();
 }
