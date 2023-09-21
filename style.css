@@ -18,6 +18,7 @@ body {
   background: gray;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .block-player_cover {
     border-radius: 20px;
