@@ -12,7 +12,10 @@
             <img class="block-player_cover" src="img/bird.jpg" alt="bird">
             <audio class="block-player_audio" src= "audio/test-audio.ogg"></audio>
             <div class="block-player_controls-block">
-                <img class="play-music hover-opacity" src="svg/play-circle.svg" alt="play">
+                <div class="controls-block_play-pause">
+                    <img class="play-music hover-opacity" src="svg/play-circle.svg" onclick="playAudio()" alt="play">
+                    <img class="play-music hover-opacity" src="svg/pause-circle.svg" onclick="pauseAudio()" alt="pause">
+                </div>
                 <div class="controls-block_name">
                     <p class="name-author">Bird</p>
                     <p class="name-music">Bird sad song</p>
