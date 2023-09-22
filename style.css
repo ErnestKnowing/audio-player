@@ -81,6 +81,11 @@ body {
   width: 1%;
   border-radius: 5px;
 }
+.time{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
 /*FOOTER*/
 .footer {
   background: rgb(71 64 64);

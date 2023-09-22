@@ -8,6 +8,8 @@ const arrayNameMusic = [
 ];
 const arrayImg = ["img/bird.jpg", "img/rain.jpg", "img/bonfire.jpg"];
 
+let durationTime = document.querySelector(".duration");
+let allTime = document.querySelector(".all-time");
 let progressBar = document.querySelector(".progress-bar_border");
 let imgBackground = document.querySelector(".block-player_cover");
 let author = document.querySelector(".name-author");
@@ -45,12 +47,28 @@ function onProgress(event) {
   let currentTime = event.target.currentTime;
   let progress = (100 / duration) * currentTime;
 
+  const time = audio.duration;
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
+  durationTime.innerHTML = `${minutes}:${seconds.toFixed(0)}`;
+
   progressBar.style.width = progress + "%";
 }
 audio.addEventListener("timeupdate", onProgress);
 
+setInterval(() => {
+  const currentTime = audio.currentTime;
+  const minutes = Math.floor(currentTime / 60);
+  const seconds = currentTime % 60;
+
+  allTime.innerHTML = `${minutes}:${seconds.toFixed(0)}`;
+}, 1000);
 function playAudio() {
-  audio.currentTime = 0
+  let duration = audio.duration;
+  let currentTime = audio.currentTime;
+  let progress = (100 / duration) * currentTime;
+
+  progressBar.style.width = progress + "%";
   audio.play();
 }
 function pauseAudio() {
