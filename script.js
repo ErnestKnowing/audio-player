@@ -1,8 +1,10 @@
 const audio = document.querySelector("audio");
-const arrayTrack = ["music/bird.mp3", "music/rain.mp3"];
-const arrayAuthor = ["Bird", "Rain"];
-const arrayNameMusic = ["Bird sad song", "Sounds of the rain"];
+const arrayTrack = ["music/bird.mp3", "music/rain.mp3", 'music/bonfire.mp3'];
+const arrayAuthor = ["Bird", "Rain", 'Fier'];
+const arrayNameMusic = ["Bird sad song", "Sounds of the rain", "Sounds of the fair"];
+const arrayImg = ['img/bird.jpg', "img/rain.jpg", "img/bonfire.jpg"]
 
+let imgBackground = document.querySelector('.block-player_cover')
 let author = document.querySelector(".name-author");
 let nameMusic = document.querySelector(".name-music");
 let rightSkip = document.querySelector("#right");
@@ -28,6 +30,7 @@ function track(switching) {
     indexArray = arrayTrack.length - 1;
   }
   audio.src = arrayTrack[indexArray];
+  imgBackground.src = arrayImg[indexArray]
   audio.play();
   author.innerHTML = arrayAuthor[indexArray];
   nameMusic.innerHTML = arrayNameMusic[indexArray];
